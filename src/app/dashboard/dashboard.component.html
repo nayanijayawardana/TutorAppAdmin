@@ -1,13 +1,16 @@
-<app-nav-bar></app-nav-bar>
 
+ 
 
 
 <div>
-    <div class="row p-3">
+     <div class="row p-3">
         <div class="col-md-4">
             <app-sidenav></app-sidenav>
-        </div>
-        <div class="col-md-8">
+    </div>
+<div class="col-md-8">
+
+        
+           
 
 <!-- Heading -->
 <div class="card mb-4 wow fadeIn">
@@ -28,30 +31,31 @@
 <!-- Heading -->
 
  <!-- List group links -->
-
- <div class="list-group list-group-flush " style="height:25%" width="5">
+ 
+ <div class="col-md-8">
+  <div class="list-group list-group-flush " style="height:35%" width="50%">
     <p class="font-weight-bold">No of users</p>
   <a class="list-group-item list-group-item-action waves-effect">Student
-    <span class="badge badge-success badge-pill pull-right">500
+    <span class="badge badge-success badge-pill pull-right">{{numberOfStudents}}
      
     </span>
   </a>
   <a class="list-group-item list-group-item-action waves-effect">Tutor
-    <span class="badge badge-danger badge-pill pull-right">100
+    <span class="badge badge-danger badge-pill pull-right">{{numberOfTutors}}
       
     </span>
   </a>
   <a class="list-group-item list-group-item-action waves-effect">Complaint and message
-    <span class="badge badge-primary badge-pill pull-right">10</span>
+    <span class="badge badge-primary badge-pill pull-right">{{numberOfMassages}}</span>
   </a>
 </div>
+</div>
+
 <!-- List group links -->
 
 
-
-
 <p class="font-weight-bold">No of student and tutors registerd in each district</p>
-<table class="table table-hover" style="height:25%" width="5" >
+<table class="table table-hover" style="height:15%" width="5" >
     <!-- Table head -->
   <thead class="blue-grey lighten-4">
     <tr>
@@ -63,33 +67,35 @@
   </thead>
   <!-- Table head -->
 
-  <!-- Table body -->
+  <!-- district Table body -->
   <tbody>
     <tr>
       <th scope="row">1</th>
       <td>colombo</td>
-      <td>100</td>
-      <td>78</td>
+      <td>10</td>
+      <td>7</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Gampaha</td>
-      <td>70</td>
-      <td>60</td>
+      <td>7</td>
+      <td>6</td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Kegalla</td>
-      <td>52</td>
-      <td>85</td>
+      <td>5</td>
+      <td>8</td>
     </tr>
   </tbody>
   <!-- Table body -->
 </table>
-<!-- Table  -->
+
+
+<!--subject wise tutor Table  -->
 
 <p class="font-weight-bold">No of tutors registerd in each subject</p>
-<table class="table table-hover" item-width="100" style="height:25%" width="5">
+<table class="table table-hover" item-width="100" style="height:15%" width="5">
  
     <!-- Table head -->
     <thead class="blue-grey lighten-4">
@@ -106,36 +112,72 @@
       <tr>
         <th scope="row">1</th>
         <td>Science</td>
-        <td>100</td>
+        <td>10</td>
        
       </tr>
       <tr>
         <th scope="row">2</th>
         <td>Maths</td>
-        <td>70</td>
+        <td>7</td>
         
       </tr>
       <tr>
         <th scope="row">3</th>
         <td>Biology</td>
-        <td>52</td>
+        <td>2</td>
       </tr>
     </tbody>
     <!-- Table body -->
   </table>
   <!-- Table  -->
   
-
+<!-- barChart district wise  -->
   <div style="display: block">
-      <canvas mdbChart
-          [chartType]="chartType"
-          [datasets]="chartDatasets"
-          [labels]="chartLabels"
-          [colors]="chartColors"
-          [options]="chartOptions"
-          [legend]="true"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)">
-      </canvas>
-  </div>
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+<p class="font-weight-bold">percentage of student</p>
+<h5></h5>
+<div class="col-md-5">
+<app-piechart></app-piechart>
 
+</div>
+
+<p class="font-weight-bold">percentage of Tutor</p>
+<h5></h5>
+<div class="col-md-5">
+<app-piechart-tutor></app-piechart-tutor>
+
+</div>
+
+
+
+<p class="font-weight-bold">Line chart</p>
+<div class="col-md-8">
+<app-linechart></app-linechart>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+  

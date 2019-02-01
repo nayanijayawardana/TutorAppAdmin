@@ -8,6 +8,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import { AdminServiceService } from './shared/services/admin-service.service';
+import {  HttpModule } from '@angular/http';
+import { PiechartComponent } from './piechart/piechart.component';
+import { LinechartComponent } from './linechart/linechart.component';
+import { PiechartTutorComponent } from './piechart-tutor/piechart-tutor.component';
 
 
 
@@ -20,11 +25,15 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
     NavBarComponent,
     SidenavComponent,
     routingcomponents,
+    PiechartComponent,
+    LinechartComponent,
+    PiechartTutorComponent,
+    
     
    
   ],
   imports: [
-   
+    HttpModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
@@ -33,7 +42,9 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AdminServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
